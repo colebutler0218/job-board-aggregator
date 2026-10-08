@@ -28,7 +28,7 @@ sudo -u postgres createdb --owner=jobs jobs
 Check that you can connect:
 
 ```bash
-psql "postgresql://jobs:YOUR_PASSWORD@localhost:5432/jobs" -c "select version();"
+psql "postgresql+psycopg://jobs:YOUR_PASSWORD@localhost:5432/jobs" -c "select version();"
 ```
 
 > **WSL note:** Postgres may not start automatically when WSL restarts. If the app can't connect, run `sudo service postgresql start`.
